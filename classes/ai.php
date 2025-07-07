@@ -34,8 +34,7 @@ use moodle_exception;
  * @copyright  2023 DeveloperCK <developerck@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class ai
-{
+class ai {
 
     /**
      * API url
@@ -48,8 +47,7 @@ class ai
      * @param string $text
      * @return string
      */
-    public static function generate_text($text)
-    {
+    public static function generate_text($text) {
         global $CFG;
         $choice = 1;
         $message = [["role" => "user", "content" => $text]];
@@ -71,14 +69,14 @@ class ai
             "presence_penalty" => (float) $presence,
 
         ];
-        require_once $CFG->libdir . '/filelib.php';
+        require_once($CFG->libdir . '/filelib.php');
         $curl = new \curl();
-        $curl->setopt(array(
-            'CURLOPT_HTTPHEADER' => array(
+        $curl->setopt([
+            'CURLOPT_HTTPHEADER' => [
                 'Authorization: Bearer ' . $apikey,
-                'Content-Type: application/json'
-            ),
-        ));
+                'Content-Type: application/json',
+            ],
+        ]);
         $response = $curl->post($apiurl, json_encode($curlbody));
         $response = json_decode($response, true);
         if (isset($response['error'])) {
@@ -93,9 +91,7 @@ class ai
      * @param int $choice
      * @return string $html
      */
-
-    private static function format_response_card($response)
-    {
+    private static function format_response_card($response) {
         global $OUTPUT;
         $templatecontext = [
             'content' => $response['choices'][0]['text'],

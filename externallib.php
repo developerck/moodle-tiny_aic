@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
  * Class containing external library functions for the TinyMCE AI Content (aic) plugin.
  *
@@ -33,26 +32,21 @@ require_once($CFG->libdir . '/externallib.php');
 require_once(__DIR__ . '/classes/ai.php'); // Ensure the ai class is loaded.
 /**
  * This file contains the external library functions for the TinyMCE AI Content (aic) plugin.
- * 
  * Provides class definitions and methods to support AI-powered content features within the TinyMCE editor.
- * 
  * @package    editor_tiny
  * @subpackage plugins_aic
  */
-
-class tiny_aic_external extends external_api
-{
+class tiny_aic_external extends external_api {
 
     /**
      * Returns description of method parameters
      * @return external_function_parameters
      */
-    public static function get_generated_text_parameters()
-    {
+    public static function get_generated_text_parameters() {
         return new external_function_parameters(
-            array(
-                'prompt' => new external_value(PARAM_RAW, 'The prompt for AI generation.')
-            )
+            [
+                'prompt' => new external_value(PARAM_RAW, 'The prompt for AI generation.'),
+            ]
         );
     }
 
@@ -62,15 +56,14 @@ class tiny_aic_external extends external_api
      * @return array{generatedtext: string} Associative array with the generated text.
      * @throws moodle_exception
      */
-    public static function get_generated_text($prompt)
-    {
+    public static function get_generated_text($prompt) {
         self::validate_parameters(
             self::get_generated_text_parameters(),
             ['prompt' => $prompt]
         );
           self::validate_context(context_system::instance());
         // Perform your AI generation logic here based on $prompt.
-        // For demonstration:
+        // For demonstration.
         try {
             $generatedtext = tiny_aic\ai::generate_text($prompt);
         } catch (\Throwable $e) {
@@ -85,12 +78,11 @@ class tiny_aic_external extends external_api
      * Returns description of method result value
      * @return external_description
      */
-    public static function get_generated_text_returns()
-    {
+    public static function get_generated_text_returns() {
         return new external_single_structure(
-            array(
-                'generatedtext' => new external_value(PARAM_RAW, 'The generated text from AI.')
-            )
+            [
+                'generatedtext' => new external_value(PARAM_RAW, 'The generated text from AI.'),
+            ]
         );
     }
 }

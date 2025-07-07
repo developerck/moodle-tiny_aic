@@ -43,7 +43,7 @@ export const getSetup = async () => {
       { key: "help", component },
       { key: "generate", component },
       { key: "cancel", component },
-      { key: "placeholder", component },
+      { key: "aicplaceholder", component },
       { key: "emptyrule", component },
       { key: "lengthrule", component },
       { key: "thinking", component },

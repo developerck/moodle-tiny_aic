@@ -17,7 +17,7 @@
 /**
  * Commands helper for the Moodle tiny_aic plugin.
  *
- * @module      tiny_aic/db/services.php
+ * @package     tiny_aic
  * @copyright   2025 DeveloperCK <developerck@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

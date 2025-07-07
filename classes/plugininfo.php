@@ -28,16 +28,14 @@ use editor_tiny\plugin_with_configuration;
  * @copyright   2025 DeveloperCK <developerck@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class plugininfo extends plugin implements plugin_with_configuration, plugin_with_buttons
-{
+class plugininfo extends plugin implements plugin_with_configuration, plugin_with_buttons {
 
     /**
      * Get a list of the buttons provided by this plugin.
      *
      * @return array
      */
-    public static function get_available_buttons(): array
-    {
+    public static function get_available_buttons(): array {
         return [
             'tiny_aic/plugin',
         ];
