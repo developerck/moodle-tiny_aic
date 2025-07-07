@@ -1,0 +1,37 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template tiny_aic/content
+
+    Display generated content  message
+
+    Example context (json):
+    {
+        "content": "This is the generated content from AI service."
+    }
+}}
+
+
+<div class="card">
+  <h5 class="card-header">Generated Content</h5>
+  <div class="card-body">
+    <div class="card-text"  id="aiccontent">{{{content}}}</div>
+     <button class="tox-button tox-button--primary" type="button" id="inserttext_tiny_aic">
+                    {{#str}}add_to_editor,tiny_aic {{/str}}
+                </button>
+  </div>
+</div>

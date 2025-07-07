@@ -43,6 +43,10 @@ export const getSetup = async () => {
       { key: "help", component },
       { key: "generate", component },
       { key: "cancel", component },
+      { key: "placeholder", component },
+      { key: "emptyrule", component },
+      { key: "lengthrule", component },
+      { key: "thinking", component },
     ]),
   ]);
 
@@ -77,7 +81,7 @@ const handleAction = (editor, dialogStrings) => {
           type: "textarea",
           name: "prompt",
           label: dialogStrings[1],
-          placeholder: "write about digital learning",
+          placeholder: dialogStrings[4],
           multiline: true,
         },
         {
@@ -162,22 +166,35 @@ const handleAction = (editor, dialogStrings) => {
   font-size: 1rem;
   font-family: system-ui, sans-serif;
 }
+   .tox .alert-info {
+  background-color:rgb(205, 239, 255);
+  color: #664d03;
+  border: 1px solid rgb(205, 239, 255);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-family: system-ui, sans-serif;
+}
     `;
         document.head.appendChild(style);
       }
       if (!prompt || prompt.trim() === "") {
         $(aiOutputPanel).html(
-          "<div class ='alert alert-danger'>please put some text.</div>"
+          "<div class ='alert alert-danger'>"+dialogStrings[5]+"</div>"
         );
         return;
       }
       if (prompt.length < 3 || prompt.length > 1000) {
         // Show a loading indicator (optional but good UX)
         $(aiOutputPanel).html(
-          "<div class ='alert alert-danger'>at least 3 character to 1000 character max</div>"
+          "<div class ='alert alert-danger'>"+dialogStrings[6]+"</div>"
         );
       }
       try {
+         $(aiOutputPanel).html(
+          "<div class ='alert alert-info'>"+dialogStrings[7]+"</div>"
+        );
         Ajax.call([
           {
             methodname: "tiny_aic_get_generated_text", // Define this method in your ajax.php
@@ -190,7 +207,7 @@ const handleAction = (editor, dialogStrings) => {
             $(aiOutputPanel).html("");
             if (response.error) {
               // Handle the error response from the AI service.
-              throw new Error("Error generating text: ");
+              throw new Error(dialogStrings[4]);
             } else {
               // Insert the generated text into the editor.
 
@@ -214,7 +231,6 @@ const handleAction = (editor, dialogStrings) => {
             );
           });
       } catch (error) {
-        console.log("tiny_aic AJAX error:", error);
         $(aiOutputPanel).html(
           '<div class="alert alert-danger" role="alert">' +
             error.message +

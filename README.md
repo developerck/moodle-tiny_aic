@@ -1,6 +1,16 @@
 # AIC #
 
-tiny Editor plugin to integrate CHATGPT to create content and available to role based restrictive audience
+This plugin seamlessly integrates ChatGPT's content generation capabilities directly into the TinyMCE editor, empowering users to create compelling text with AI assistance. It features role-based access control, ensuring that the powerful AI writing tools are available only to authorized user role.
+
+# Plugin Dependency on OpenAI API Key
+
+The plugin depends upon an OpenAI API key to function correctly. This key acts as a secure token that grants access to OpenAI’s powerful language models and other AI services. Without this key, the plugin cannot communicate with OpenAI’s servers or utilize its AI capabilities, meaning the features powered by OpenAI will not work.
+
+To generate your own OpenAI API key, you need to create an account on the [OpenAI platform](https://platform.openai.com/). After registering and logging in, navigate to the API section of your dashboard, where you can generate new API keys. Each key is unique and should be kept confidential to prevent unauthorized access. 
+
+Once you have obtained the API key, you can configure the plugin by entering the key in the appropriate settings or environment variables. This step is crucial for enabling seamless integration between the plugin and OpenAI’s services.
+
+
 
 [developerck.com](developerck.com)
 

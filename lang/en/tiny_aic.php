@@ -69,3 +69,7 @@ $string['allowed_admin'] = 'Allow to site admin';
 $string['allowed_admin_desc'] = '';
 $string['cancel'] = 'Cancel';
 $string['draft'] = 'Draft';
+$string['placeholder'] = 'write about ...';
+$string['emptyrule'] = 'please put some text.';
+$string['lengthrule'] = 'Please write more than 3 characters and not more than 1000 characters';
+$string['thinking'] = 'Thinking...';

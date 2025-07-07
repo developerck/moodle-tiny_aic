@@ -96,21 +96,11 @@ class ai
 
     private static function format_response_card($response)
     {
-
-        // Bootstrap 5 Tab Nav Link
-        $html = '
-       
-        <div class="card">
-  <h5 class="card-header">Generated Content</h5>
-  <div class="card-body">
-    <div class="card-text"  id="aiccontent">' . $response['choices'][0]['text'] . '</div>
-     <button class="tox-button tox-button--primary" type="button" id="inserttext_tiny_aic">
-                    ' . get_string('add_to_editor', 'tiny_aic') . '
-                </button>
-  </div>
-</div>';
-
-
+        global $OUTPUT;
+        $templatecontext = [
+            'content' => $response['choices'][0]['text'],
+        ];
+        $html = $OUTPUT->render_from_template('tiny_aic/content', $templatecontext);
         return $html;
     }
 }

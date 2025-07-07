@@ -58,7 +58,7 @@ class plugininfo extends plugin implements plugin_with_configuration, plugin_wit
         array $fpoptions,
         ?\editor_tiny\editor $editor = null
     ): array {
-        global $CFG, $USER;
+        global  $USER;
         // Check if openapi key is available.
         $key = get_config("tiny_aic", "apikey");
         $roles = get_config("tiny_aic", "allowed_role");
@@ -87,6 +87,5 @@ class plugininfo extends plugin implements plugin_with_configuration, plugin_wit
             }
         }
         return $params;
-        
     }
 }
