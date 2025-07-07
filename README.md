@@ -14,7 +14,7 @@ Once you have obtained the API key, you can configure the plugin by entering the
 
 [developerck.com](developerck.com)
 
-![AIC](https://github.com/developerck/moodle-tiny_aic/actions/workflows/main.yml/badge.svg?branch=main)
+[![AIC](https://github.com/developerck/moodle-tiny_aic/actions/workflows/ci.yml/badge.svg)](https://github.com/developerck/moodle-tiny_aic/actions/workflows/ci.yml)
 ## License ##
 
 2025 Chandra K <developerck@gmail.com>
