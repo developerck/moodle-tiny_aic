@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_aic';
 $plugin->release = '0.1.6';
-$plugin->version = 2025070103;
+$plugin->version = 2025070104;
 $plugin->requires = 2020061500;
 $plugin->maturity = MATURITY_ALPHA;

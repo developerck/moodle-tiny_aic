@@ -73,3 +73,5 @@ $string['aicplaceholder'] = 'write about ...';
 $string['emptyrule'] = 'please put some text.';
 $string['lengthrule'] = 'Please write more than 3 characters and not more than 1000 characters';
 $string['thinking'] = 'Thinking...';
+$string['privacy:metadata'] = 'AIC content generator does not store any data.';
+$string['card_heading'] = 'Generated Content';
