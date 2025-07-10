@@ -75,3 +75,4 @@ $string['lengthrule'] = 'Please write more than 3 characters and not more than 1
 $string['thinking'] = 'Thinking...';
 $string['privacy:metadata'] = 'AIC content generator does not store any data.';
 $string['card_heading'] = 'Generated Content';
+$string['aigenerationfailed'] = 'AI generation failed';
